@@ -1,0 +1,73 @@
+<p align="center">Para acceder a la biblioteca por favor cree una cuenta de usuario gratuita</p>
+	<form action="modelo/registro.php" method="post" enctype="multipart/form-data">
+		<table>	
+			<tr>
+				<td><label for="nombre">Nombres y Apellidos:</label>
+				</td>
+				<td>
+					<input id="nombre" name="nombre" type="text" pattern="^[A-Z][A-Za-z\s]+" title="Digite nombres y apellidos con la primera letra mayuscula. Use solo letras y un espacio para separar nombres y apellidos" placeholder="Nombre Apellido" required autofocus />
+					
+<!-- En la expresión regular "^[A-Z][A-Za-z\s]+" , ^[A-Z] verifica que la primera letra este en mayuscula, [A-Za-z] valida que se escriban solo letras, \s valida que se dejo un espacio en blanco despues de una palabra y el signo + permite validar lo anterior en varias palabras -->
+				</td>						
+				<td>
+					&nbsp; Número documento de identidad:
+				</td>
+				<td>
+					<input type="text" name="id" pattern="[0-9.]+" placeholder="Número de cedula o pasaporte" title="Digite solo números" required />
+				</td> 
+			</tr>
+			<tr>
+				<td>Teléfonos: 
+				</td>
+				<td>
+					<input type="text" name="telefono" pattern="[0-9.]+" placeholder="Número fijo ó celular" title="Digite solo números" required />
+				</td>
+					<!--	\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b  expresión regular para validar emails -->
+				<td>										
+					&nbsp; Dirección de correo electrónico:
+				</td>	
+                <!-- /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/  es otra expresión regular para validar emails -->
+				<td>
+					<input type="email" name="email" placeholder="usuario@dominio.com" pattern="^[-\w.]+@{1}[-a-z0-9]+[.]{1}[a-z]{2,5}$" required />			
+				</td>								
+			</tr>	
+            <!-- En la expresión regular ^[-\w.]+@{1}[-a-z0-9]+[.]{1}[a-z]{2,5}$   \w valida que se haya escrito cualquier numero o letra -->
+			
+			<tr>				
+				<td>
+					Dirección residencia:
+				</td>
+				<td>
+					<input type="text" name="dir" required />
+				</td>
+				<td>&nbsp; Ciudad donde vive:
+				</td>
+				<td>
+					<input name="id" type="text" pattern="^[A-Z][A-Za-z\s]+" title="Digite el nombre de la ciudad donde reside con la primera letra mayuscula. Use solo letras y un espacio para separar nombres" placeholder="Ciudad" required  />
+				</td>	
+			</tr>
+			<tr>
+				<td><label for="username">Nombre de usuario:</label>
+				</td>
+				<td>
+					<input name="username" type="text"  id="username" placeholder="username" required  />
+				</td>	
+			
+				<td>
+					<label for="password">&nbsp; Escriba su Contraseña:</label>
+				</td>
+				<td>
+					<input type="password" name="password" id="password" required /><br />
+					<input type="checkbox" id="show"/> <label for="show">Mostrar password</label>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="reset" value="Borrar datos" />
+				</td>	
+				<td colspan="2" align="center">
+					<input type="submit" value="Crear cuenta" />
+				</td>
+			</tr>
+		</table>
+		</form>
